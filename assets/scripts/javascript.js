@@ -17,24 +17,24 @@ function reset(){
 
     for (var i=0; i<crystals.length; i++){
         crystals[i] = randomInt(2 + i, 6 + i * 2); // Assigns a random integer to the crystals. I wanted to make the larger crystals give a generally higher output (to help balance the game). 1st: 2-6. 2nd: 3-8. 3rd: 4-10. 4th: 5-12
-        var crystal = $("<button>")
-        crystal.addClass("btn btn-dark");
+        var crystal = $("<img>")
+        crystal.addClass("cr");
         crystal.attr("id", "crystal" + i);
+        crystal.attr("src", "assets/images/cr" + i + ".png");
         crystal.attr("value", crystals[i]);
-        crystal.text("Crystal " + i);
         $("#crystalBtn").append(crystal);
     }
 
-    $("#reach").text("Score to Match: " + reachScore);
-    $("#current").text("Current Score: " + currentScore);
+    $("#reach").text(reachScore);
+    $("#current").text(currentScore);
     $("#win-loss").text("");
 
-    // Added a "Guesses Left" formula to prevent the player from spamming smaller numbers until they reach the final number (I tested this until it seemed fair)
+    // Added a "Guesses Left" formula to prevent the player from spamming smaller numbers until they reach the final number (I tested this until it seemed fair. It's just a minor change and usually isn't an issue unless you have a 2 and a large even number to reach)
     guessesLeft = Math.round(10 - ((crystals[0] + crystals[1] + crystals[2] + crystals[3]) / crystals.length) + (reachScore / 7));
-    $("#guesses").text("Guesses Left: " + guessesLeft);
+    $("#guesses").text(guessesLeft);
 
     // Check for crystalClick
-    $(".btn-dark").on("click", crystalClick);
+    $(".cr").on("click", crystalClick);
 
     console.log("Crystal 0: " + crystals[0]);
     console.log("Crystal 1: " + crystals[1]);
@@ -64,14 +64,14 @@ function crystalClick(){
     var crystalId = $(this).attr("id");
     currentScore += parseInt($("#" + crystalId).attr("value"));
 
-    $("#current").text("Current Score: " + currentScore);
+    $("#current").text(currentScore);
     console.log("Current Score: " + currentScore);
 
     if (currentScore < reachScore || currentScore > reachScore){
         guessesLeft--;
     }
 
-    $("#guesses").text("Guesses Left: " + guessesLeft);
+    $("#guesses").text(guessesLeft);
     console.log("Guesses Left: " + guessesLeft);
 
     if (currentScore >= reachScore || guessesLeft <= 0){
@@ -82,11 +82,13 @@ function crystalClick(){
 function finish(){
     if (currentScore === reachScore){
         wins++;
+        $("#win-loss").css("color", "#0f0");
         $("#win-loss").text("You Win!");
         $("#wins").text("Wins: " + wins);
     }
     if (currentScore > reachScore || guessesLeft == 0){
         losses++
+        $("#win-loss").css("color", "#f00");
         $("#win-loss").text("You Lose!");
         $("#losses").text("Losses: " + losses);
     }
@@ -96,7 +98,7 @@ function finish(){
     }
 
     var resetBtn = $("<button>")
-    resetBtn.addClass("btn btn-primary");
+    resetBtn.addClass("btn btn-secondary btn-lg resize");
     resetBtn.attr("id", "reset");
     resetBtn.text("Play Again");
     $("#resetBtn").append(resetBtn);

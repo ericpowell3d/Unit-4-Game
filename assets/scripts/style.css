@@ -8,16 +8,74 @@ body {
     font-size: 24px;
     line-height: 32px;
     color: #000;
+    background: url(../images/cave.jpg);
+    background-position-y: 20%
 }
 
-header {
+h1 {
     padding: 24px;
     margin: 0px;
-    color: #000;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+}
+h2 {
+    padding: 24px;
+    margin: 0px;
+    font-size: 50px;
+    color: #555;
+    background-color: #fff;
+}
+h3 {
+    padding: 12px;
+    border: solid #fff 6px;
+    margin: 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+h4 {
+    padding: 24px;
+    margin: 0px;
+    font-size: 40px;
+    color: #555;
 }
 
-footer {
-    padding: 24px;
-    clear: both;
-    background: #fff;
+#t1 {
+    color: #fff;
+    background-color: #ffa000;
+}
+#t2 {
+    color: #fff;
+    background-color: #0080ff;
+}
+#t3 {
+    color: #fff;
+    background-color: palevioletred;
+}
+
+#wins {
+    padding: 18px;
+    border: 0;
+    margin: 0;
+    color: #555;
+    background-color: #fff;
+}
+#losses {
+    padding: 18px;
+    border: 0;
+    margin: 0;
+    color: #555;
+    background-color: #fff;
+}
+
+img {
+    max-width: 120px;
+    max-height: 120px;
+}
+
+.resize {
+    width: 220px;
+    height: 96px;
+    font-size: 32px;
+    font-weight: bold;
 }

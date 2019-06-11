@@ -2,6 +2,7 @@
 <html lang="en-us">
 
 <!-- Start Head of Document -->
+
 <head>
 
   <!-- META -->
@@ -10,7 +11,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="assets/scripts/style.css">
 
   <title>Crystal Game</title>
@@ -18,6 +20,7 @@
 </head>
 
 <!-- Start Body of Document -->
+
 <body>
 
   <div class="container">
@@ -28,35 +31,44 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-lg-12">
-        <h2 id="reach">Score to Match: 0</h2>
+    <br>
+
+    <div class="row justify-content-lg-center">
+      <div class="col col-lg-3">
+        <h3 id="t1">Crystals Left</h3>
+      </div>
+      <div class="col col-lg-3">
+        <h3 id="t2">Current Score</h3>
+      </div>
+      <div class="col col-lg-3">
+        <h3 id="t3">Score to Match</h3>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-lg-12">
-        <h2 id="current">Current Score: 0</h2>
+    <div class="row justify-content-lg-center">
+      <div class="col col-lg-3">
+        <h2 id="guesses">0</h2>
+      </div>
+      <div class="col col-lg-3">
+        <h2 id="current">0</h2>
+      </div>
+      <div class="col col-lg-3">
+        <h2 id="reach">0</h2>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-lg-12">
-        <h2 id="wins">Wins: 0</h2>
+    <br>
+
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-2">
+        <h3 id="wins">Wins: 0</h3>
+      </div>
+      <div class="col col-lg-2">
+        <h3 id="losses">Losses: 0</h3>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-lg-12">
-        <h2 id="losses">Losses: 0</h2>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-12">
-        <h2 id="guesses">Guesses Left: 1</h2>
-      </div>
-    </div>
+    <br>
 
     <div class="row">
       <div class="col-lg-12">
@@ -64,15 +76,19 @@
       </div>
     </div>
 
+    <br>
+
     <div class="row">
       <div class="col-lg-12">
         <div id="resetBtn"></div>
       </div>
     </div>
 
+    <br>
+
     <div class="row">
       <div class="col-lg-12">
-        <h2 id="win-loss"></h2>
+        <h4 id="win-loss"></h4>
       </div>
     </div>
 
